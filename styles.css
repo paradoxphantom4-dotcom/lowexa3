@@ -266,27 +266,66 @@ img {
   letter-spacing: 0.01em;
 }
 
-/* Bundle photo in hero */
+/* Bundle photos in hero */
 .hero-books {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  gap: var(--space-m);
 }
 
 .hero-bundle-img {
-  width: 100%;
-  max-width: 480px;
   border-radius: var(--border-radius-m);
   box-shadow: 0 32px 80px rgba(26, 77, 62, 0.18), 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  object-fit: cover;
 }
 
-/* Bundle photo in checkout */
+.hero-bundle-img:hover {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.hero-ebook-img {
+  width: 58%;
+  max-width: 280px;
+}
+
+.hero-grocery-img {
+  width: 38%;
+  max-width: 180px;
+  margin-bottom: var(--space-s);
+}
+
+/* Bundle photos in checkout */
+.checkout-covers {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-s);
+}
+
 .checkout-bundle-img {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  border-radius: var(--border-radius-m);
+  border-radius: var(--border-radius-s);
   box-shadow: 0 16px 48px rgba(26, 77, 62, 0.15), 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.checkout-bundle-img:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+.checkout-covers .checkout-bundle-img:first-child {
+  width: 58%;
+  max-width: 190px;
+}
+
+.checkout-covers .checkout-bundle-img:last-child {
+  width: 38%;
+  max-width: 120px;
+  margin-bottom: var(--space-xs);
 }
 
 @media (max-width: 899px) {
@@ -427,6 +466,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: var(--space-s) 0;
+  overflow: hidden;
 }
 
 .bundle-card-img img {
@@ -434,6 +474,12 @@ img {
   width: auto;
   border-radius: var(--border-radius-s);
   box-shadow: 0 24px 64px rgba(26, 77, 62, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+}
+
+.bundle-card-img img:hover {
+  transform: scale(1.08);
 }
 
 .bundle-card-title {
